@@ -1,11 +1,10 @@
 <script setup>
 import UserList from '@/components/UserList.vue'
 import { useQuery } from '@tanstack/vue-query'
-import { log } from 'node:util'
+
 const getUsers = async () => {
   const response = await fetch('https://jsonplaceholder.typicode.com/users')
-  const result = await response.json()
-  return result;
+  return await response.json();
 }
 
 
