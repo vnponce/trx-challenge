@@ -25,17 +25,6 @@ const { isPending, isFetching, isError, data, error } = useQuery({
 
   <main>
     <!--    User list -->
-    {{ console.log(data) }}
-    Name
-    <div id="user-list" v-for="user in data" :key="user.id">
-      <img
-        class="w-10 h-10 m-4 shadow-lg mx-auto border border-neutral-200 rounded-xl"
-        :src="user.email"
-        :alt="user.name"
-      />
-      {{ user.name }}
-      {{ user.email }}
-    </div>
-<!--    <UserList v-if="data" :users="data" />-->
+    <UserList v-if="data" :users="data" />
   </main>
 </template>
