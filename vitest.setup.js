@@ -1,6 +1,11 @@
+import * as matchers from '@testing-library/jest-dom/matchers';
+import { expect } from 'vitest';
+
 import { afterAll, afterEach, beforeAll } from 'vitest'
 import { setupServer } from 'msw/node'
 import handlers from '@/mocks/handlers'
+
+expect.extend(matchers)
 
 const server = setupServer(...handlers)
 
