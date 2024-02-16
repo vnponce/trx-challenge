@@ -33,7 +33,8 @@ The main goal was to create a user list with the ability to filter by name and e
 ## Decisions
 ### Design 🎨
 > I chose to use the mobile-first approach to make the application responsive. 
-Taking benefit from TailwindCSS and its great developer experience I was able to create the layout and componets easly.
+Taking benefit from TailwindCSS and its great developer experience I was able to create the layout and components easily.
+
 ![Captura de pantalla 2024-02-16 a la(s) 2 47 46 a m](https://github.com/vnponce/trx-challenge/assets/11002279/52b1ee5b-29ec-4269-93eb-fa5bfc089013)
 
 
