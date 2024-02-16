@@ -16,11 +16,11 @@ The main goal was to create a user list with the ability to filter by name and e
 - Fetch users from the provided API (https://jsonplaceholder.typicode.com/users)
 - List users
 - Filter users by name and email
-- Design align with the provided mockup
+- Design aligns with the provided mockup
 
 ## Improvements not requested 🔨
 - Clear filter button
-- Mobile first design
+- Mobile-first design
 - E2E tests with Cypress
 - Unit tests with Jest and Vue Testing Library
 
@@ -34,30 +34,30 @@ The main goal was to create a user list with the ability to filter by name and e
 ### Design 🎨
 > I chose to use the mobile-first approach to make the application responsive. 
 Taking benefit from TailwindCSS and its great developer experience I was able to create the layout and componets easly.
+![Captura de pantalla 2024-02-16 a la(s) 2 47 46 a m](https://github.com/vnponce/trx-challenge/assets/11002279/52b1ee5b-29ec-4269-93eb-fa5bfc089013)
 
-![Captura de pantalla 2024-02-16 a la(s) 2.12.52 a.m..png](..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2Fnf%2F4_y84ygj2yj37d806ybjbyzw0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_YDRUeZ%2FCaptura%20de%20pantalla%202024-02-16%20a%20la%28s%29%202.12.52%E2%80%AFa.m..png)
 
 ### Tests 🧪
-> I chose to use TDD to ensure the quality of the code and the application. I'm a fan of TDD since 2015 so I always try to use it in my projects.
+> I chose to use TDD to ensure the quality of the code and the application. I've been a fan of TDD since 2015 so I always try to use it in my projects.
 > </br> This time I used Jest and Vue Testing Library for unit tests and Cypress for E2E tests.
-> </br> Basically I created the tests before the implementation of the features and then I implemented the features to make the tests pass.
-> </br> I was not sure what is the Testing Strategy of the company so I decided to create a few tests to demonstrate my knowledge and experience with different type of strategies like 'unit', 'integration' and 'e2e'.
-> </br> My decision to use testing library instead of Vue Test Utils is because it is more user-friendly and it is the most popular tool for testing. It also was integrated with Cypress tests.
+> </br> I created the tests before the implementation of the features and then I implemented the features to make the tests pass.
+> </br> I was not sure what is the Testing Strategy of the company so I decided to create a few tests to demonstrate my knowledge and experience with different types of strategies like 'unit', 'integration', and 'e2e'.
+> </br> My decision to use the `testing library` is because it is more user-friendly and it is the most popular tool for testing. It also was integrated with Cypress tests.
 
 ### Run Unit/Integration Tests with [Vitest](https://vitest.dev/)
 
 ```sh
 npm run test:unit
 ```
-![Captura de pantalla 2024-02-16 a la(s) 2.17.09 a.m..png](..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2Fnf%2F4_y84ygj2yj37d806ybjbyzw0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_hxaBzN%2FCaptura%20de%20pantalla%202024-02-16%20a%20la%28s%29%202.17.09%E2%80%AFa.m..png)
+![Captura de pantalla 2024-02-16 a la(s) 2 48 26 a m](https://github.com/vnponce/trx-challenge/assets/11002279/e9eec51f-9f83-4259-87f9-760c27f12872)
 
 ### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
 
 ```sh
 npm run test:e2e:dev
 ```
-![Captura de pantalla 2024-02-16 a la(s) 2.16.36 a.m..png](..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2Fnf%2F4_y84ygj2yj37d806ybjbyzw0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_UuYEEl%2FCaptura%20de%20pantalla%202024-02-16%20a%20la%28s%29%202.16.36%E2%80%AFa.m..png)
- 
+ ![Captura de pantalla 2024-02-16 a la(s) 2 48 50 a m](https://github.com/vnponce/trx-challenge/assets/11002279/1b07837a-d5bb-4174-8f5a-9364541cab76)
+
 
 ### Composition Components 🧩
 > I chose to use the Composition API to take advantage of the new features of Vue 3.
@@ -73,10 +73,10 @@ npm run test:e2e:dev
 > It lives in the `services` folder to make the code more organized and maintainable.
 
 ### Filter 🧹
-> Tht filter is case insensitive and it is directly to the local list of users.
-> <br /> I implemented the `watchEffect` function to listen to the changes of the filter and update the list of users. 
+> This filter is case insensitive and it is directly to the local list of users.
+> <br /> I implemented the `watchEffect` function to listen to the changes in the filter and update the list of users. 
 > <br /> The main reason to implement `wathEffect` against `watch` was because the first one is triggered immediately or some value inside the callback changes, and the second only when the value changes.
-> <br /> I decided to not implement `debounce` function because the filter is directly to the local list and the performance is not affected.
+> <br /> I decided to not implement `debounce` function because the filter is direct to the local list and the performance is not affected.
 
 ### Store 🗄️
 > I decided to not use Pinia or Vuex because the application is small and the state is not complex. However, I understand the importance of using a state management library in a real-world application.
