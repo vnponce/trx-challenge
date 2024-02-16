@@ -21,10 +21,7 @@ const { query, filteredUsers } = useFilteredUsers(data)
           <section class="w-full mt-10">
             <h1 class="text-lg text-center font-bold">Users</h1>
             <div class="w-full px-2 flex justify-center">
-              <Search
-                v-model="query"
-                class="w-full rounded-full p-3 pl-5 border border-stone-200/90 border-3 mt-4 text-xs font-light md:max-w-[342px]"
-              />
+              <Search v-model="query" />
             </div>
           </section>
 

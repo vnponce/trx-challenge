@@ -48,4 +48,28 @@ describe('App', () => {
     const janeDoeUser = await screen.findByText(/Jane Doe/i)
     expect(janeDoeUser).toBeInTheDocument()
   })
+
+  it('shows all items when the users click the `clear` button', async () => {
+    const user = userEvent.setup()
+
+    render(App)
+
+    // having Leanne
+    const leanneUser = await screen.findByText(/Leanne/i)
+    expect(leanneUser).toBeInTheDocument()
+
+    const searchElement = await screen.findByPlaceholderText('Search')
+    await user.type(searchElement, 'traxporta')
+
+    // not having Leanne
+    const leanneUserHidden = screen.queryByText(/Leanne/i)
+    expect(leanneUserHidden).not.toBeInTheDocument()
+
+    const clearButton = await screen.findByRole('button', { name: /clear/i })
+    await user.click(clearButton)
+
+    // having Leanne back
+    const leanneUserBack = await screen.findByText(/Leanne/i)
+    expect(leanneUserBack).toBeInTheDocument()
+  })
 })
