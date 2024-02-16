@@ -1,9 +1,10 @@
-import * as matchers from '@testing-library/jest-dom/matchers';
-import { expect } from 'vitest';
+import * as matchers from '@testing-library/jest-dom/matchers'
+import { expect } from 'vitest'
 
 import { afterAll, afterEach, beforeAll } from 'vitest'
 import { setupServer } from 'msw/node'
 import handlers from '@/mocks/handlers'
+import { cleanup } from '@testing-library/vue'
 
 expect.extend(matchers)
 
@@ -16,6 +17,10 @@ beforeAll(() => server.listen({ onUnhandledRequest: 'error' }))
 afterAll(() => server.close())
 
 // Reset handlers after each test `important for test isolation`
-afterEach(() => server.resetHandlers())
+afterEach(() => {
+  // Clean tests before run new test
+  cleanup()
+  server.resetHandlers()
+})
 
 export { server }
