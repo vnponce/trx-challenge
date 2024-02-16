@@ -6,6 +6,7 @@ const model = defineModel() // Recommended since Vuejs 3.4
   <div class="w-full flex justify-center text-xs font-light">
     <div class="relative w-full md:max-w-[342px]">
       <input
+        aria-label="Search"
         type="text"
         placeholder="Search"
         v-model="model"

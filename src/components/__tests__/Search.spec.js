@@ -8,7 +8,7 @@ import userEvent from '@testing-library/user-event'
 describe('Search', () => {
   it('renders properly', async () => {
     render(Search)
-    const searchElement = await screen.findByPlaceholderText('Search')
+    const searchElement = await screen.findByLabelText('Search')
     expect(searchElement).toBeInTheDocument()
     const clearButton = screen.queryByText('Clear')
     expect(clearButton).not.toBeInTheDocument()
@@ -17,7 +17,7 @@ describe('Search', () => {
   it('show clear button user start typing', async () => {
     render(Search)
     const user = userEvent.setup()
-    const searchElement = await screen.findByPlaceholderText('Search')
+    const searchElement = await screen.findByLabelText('Search')
     user.type(searchElement, 'test')
     const clearButton = await screen.findByRole('button', { name: /Clear/i })
     expect(clearButton).toBeInTheDocument()

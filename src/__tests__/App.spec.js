@@ -14,7 +14,7 @@ describe('App', () => {
     render(App)
 
     // This is to show that a simple component is rendered
-    await screen.findByPlaceholderText('Search')
+    await screen.findByLabelText('Search')
 
     await screen.findByText('Name')
     const [UserListLastCalledProps] = UserListSpy.mock.lastCall
@@ -26,7 +26,7 @@ describe('App', () => {
 
     render(App)
 
-    const searchElement = await screen.findByPlaceholderText('Search')
+    const searchElement = await screen.findByLabelText('Search')
     await user.type(searchElement, 'Doe')
 
     const johnDoeUser = await screen.findByText(/John Doe/i)
@@ -40,7 +40,7 @@ describe('App', () => {
 
     render(App)
 
-    const searchElement = await screen.findByPlaceholderText('Search')
+    const searchElement = await screen.findByLabelText('Search')
     await user.type(searchElement, 'traxporta')
 
     const johnDoeUser = await screen.findByText(/John Doe/i)
@@ -58,7 +58,7 @@ describe('App', () => {
     const leanneUser = await screen.findByText(/Leanne/i)
     expect(leanneUser).toBeInTheDocument()
 
-    const searchElement = await screen.findByPlaceholderText('Search')
+    const searchElement = await screen.findByLabelText('Search')
     await user.type(searchElement, 'traxporta')
 
     // not having Leanne
