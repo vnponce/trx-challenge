@@ -10,6 +10,7 @@ The main goal was to create a user list with the ability to filter by name and e
 - Vite
 - TailwindCSS
 - TDD with Vitest, Jest and Vue Testing Library
+- Mock Service Worker (MSW) as a request interceptor
 - E2E tests with Cypress
 
 ## Features 🦾
@@ -40,10 +41,17 @@ Taking benefit from TailwindCSS and its great developer experience I was able to
 
 ### Tests 🧪
 > I chose to use TDD to ensure the quality of the code and the application. I've been a fan of TDD since 2015 so I always try to use it in my projects.
-> </br> This time I used Jest and Vue Testing Library for unit tests and Cypress for E2E tests.
+> </br> This time I used Jest and Vue Testing Library + Vitest for unit tests and Cypress for E2E tests.
 > </br> I created the tests before the implementation of the features and then I implemented the features to make the tests pass.
 > </br> I was not sure what is the Testing Strategy of the company so I decided to create a few tests to demonstrate my knowledge and experience with different types of strategies like 'unit', 'integration', and 'e2e'.
 > </br> My decision to use the `testing library` is because it is more user-friendly and it is the most popular tool for testing. It also was integrated with Cypress tests.
+
+### MSW with vitest 🚦
+> I implement and setup Mock Service Worker to intercept the requests and mock the responses to make the development process faster and more efficient.
+> <br /> To initialize the server I add the code related inside the `vit.config.js` file and the add it to the `vitest` configuration file.
+> <br /> The file `src/mocks/server.js` contains the setup of the server.
+> <br /> The file `src/mocks/handlers.js` contains the handlers to intercept the requests and mock the responses.
+
 
 ### Run Unit/Integration Tests with [Vitest](https://vitest.dev/)
 
