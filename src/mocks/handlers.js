@@ -1,5 +1,5 @@
 import { HttpResponse, http } from 'msw'
-export const handlers = [
+export const users = [
   {
     id: 1,
     name: 'Leanne Graham',
@@ -19,6 +19,6 @@ export const handlers = [
 
 export default [
   http.get('https://jsonplaceholder.typicode.com/users', () => {
-    return HttpResponse.json(handlers)
+    return HttpResponse.json(users)
   })
 ]

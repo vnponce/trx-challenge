@@ -4,7 +4,7 @@ import { render } from '@/utils/test-utils.js'
 import App from '@/App.vue'
 import UserList from '@/components/UserList.vue'
 import { screen } from '@testing-library/vue'
-import { handlers } from '@/mocks/handlers.js'
+import { users } from '@/mocks/handlers.js'
 import userEvent from '@testing-library/user-event'
 
 describe('App', () => {
@@ -18,7 +18,7 @@ describe('App', () => {
 
     await screen.findByText('Name')
     const [UserListLastCalledProps] = UserListSpy.mock.lastCall
-    expect(UserListLastCalledProps.users).toEqual(handlers)
+    expect(UserListLastCalledProps.users).toEqual(users)
   })
 
   it('search by name', async () => {
@@ -28,6 +28,9 @@ describe('App', () => {
 
     const searchElement = await screen.findByLabelText('Search')
     await user.type(searchElement, 'Doe')
+
+    const leanneUser = screen.queryByText(/Leanne/i)
+    expect(leanneUser).not.toBeInTheDocument()
 
     const johnDoeUser = await screen.findByText(/John Doe/i)
     expect(johnDoeUser).toBeInTheDocument()
@@ -42,6 +45,9 @@ describe('App', () => {
 
     const searchElement = await screen.findByLabelText('Search')
     await user.type(searchElement, 'traxporta')
+
+    const leanneUser = screen.queryByText(/Leanne/i)
+    expect(leanneUser).not.toBeInTheDocument()
 
     const johnDoeUser = await screen.findByText(/John Doe/i)
     expect(johnDoeUser).toBeInTheDocument()
