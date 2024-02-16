@@ -2,8 +2,7 @@
 
 Live demo: ➡ [https://trx-challenge.vercel.app/](https://trx-challenge.vercel.app/)
 
-This is a project to demonstrate expertise on Vue 3, make API requests, create components, manage state and applying styling.
-The main goal was to create a user list with the ability to filter by name and email.
+This is a project to demonstrate expertise on Vue 3, making API requests, creating highly readable components, managing efficient state and applying styling to match designs. The main goal was to create a user list with the ability to filter by name and email.
 
 ## Technologies 🤖
 - VueJS 3
@@ -28,13 +27,14 @@ The main goal was to create a user list with the ability to filter by name and e
 ## Project Structure 📂
 - `src/components`: Vue components
 - `src/services`: API requests
+- `src/composables`: Composables
 - `*/__tests__`: Unit tests
 - `/cypress`: E2E tests
 
 ## Decisions
 ### Design 🎨
-> I chose to use the mobile-first approach to make the application responsive. 
-Taking benefit from TailwindCSS and its great developer experience I was able to create the layout and components easily.
+> I chose to use the mobile-first approach to make the application responsive.
+> Taking benefit of TailwindCSS and its great developer experience I was able to create the layout and components easily.
 
 ![Captura de pantalla 2024-02-16 a la(s) 2 47 46 a m](https://github.com/vnponce/trx-challenge/assets/11002279/52b1ee5b-29ec-4269-93eb-fa5bfc089013)
 
@@ -48,7 +48,7 @@ Taking benefit from TailwindCSS and its great developer experience I was able to
 
 ### MSW with vitest 🚦
 > I implement and setup Mock Service Worker to intercept the requests and mock the responses to make the development process faster and more efficient.
-> <br /> To initialize the server I add the code related inside the `vit.config.js` file and the add it to the `vitest` configuration file.
+> <br /> To initialize the server I added the code related inside the `vite.config.js` file and `vitest.config.js`
 > <br /> The file `src/mocks/server.js` contains the setup of the server.
 > <br /> The file `src/mocks/handlers.js` contains the handlers to intercept the requests and mock the responses.
 
@@ -79,7 +79,7 @@ npm run test:e2e:dev
 > I chose to use the `vue-query` plugin to make requests because it is a modern and realistic way to make requests.
 > It is also a great tool to make the code more readable and maintainable.
 > It is a great tool to manage the state of the requests and the cache of the data (this time it was not needed but it is a great feature to have in mind for future projects).
-> It lives in the `services` folder to make the code more organized and maintainable.
+> I decided to The API calls live in the `services` folder to make the code more organized and maintainable.
 
 ### Filter 🧹
 > This filter is case insensitive and it is directly to the local list of users.
