@@ -6,7 +6,6 @@ import { useFilteredUsers, useUsers } from '@/composables/users.js'
 
 const { data } = useUsers()
 const { query, filteredUsers } = useFilteredUsers(data)
-
 </script>
 
 <template>
