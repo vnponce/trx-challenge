@@ -9,7 +9,7 @@ The main goal was to create a user list with the ability to filter by name and e
 - VueJS 3
 - Vite
 - TailwindCSS
-- TDD with Jest and Vue Testing Library
+- TDD with Vitest, Jest and Vue Testing Library
 - E2E tests with Cypress
 
 ## Features 🦾
