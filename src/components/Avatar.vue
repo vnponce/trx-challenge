@@ -15,7 +15,7 @@ const avatarImage = (id) => `https://i.pravatar.cc/40?u=${id}`
 
 <template>
   <img
-    class="w-10 h-10 m-4 mx-auto border border-neutral-200 rounded-xl"
+    class="w-10 h-10 m-4 mx-auto border border-stone-200 rounded-lg"
     :src="avatarImage(id)"
     :alt="name"
   />
